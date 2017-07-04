@@ -25,7 +25,9 @@ DATA METADATA_INFORMATION;
          DSD DLM = ','
          MISSOVER;
   LENGTH _PATH     $87.
-         _FILENAME $17.;
+         _FILENAME $17.
+         _VERSION  $2.;
   INPUT  _PATH
-         _FILENAME $;
+         _FILENAME
+         _VERSION  $;
 RUN;

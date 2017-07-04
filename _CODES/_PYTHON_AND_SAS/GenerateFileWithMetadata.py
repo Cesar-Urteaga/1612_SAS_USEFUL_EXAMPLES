@@ -3,7 +3,7 @@
 # "chmod 755 GenerateFileWithMetadata.py"
 
 #-------------------------------------------------------------------------------
-# Author        : Raul.
+# Author        : Cesar R. Urteaga-Reyesvera.
 # Creation Date : June 30, 2017.
 # Description   : Script that creates a comma-separated file with metadata
 #                 information about the files of a given type and in a specified
@@ -51,4 +51,5 @@ for dirpath, dirnames, filenames in os.walk(".", topdown = True):
     if file.endswith(gFileExtension) and \
        file != gNameFileWithMetadata + ".txt":
       FileWithMetadata.write(os.path.realpath(dirpath) + ",")
-      FileWithMetadata.write(file + "\n")
+      FileWithMetadata.write(file + ",")
+      FileWithMetadata.write(file[-6:-4] + "\n")
