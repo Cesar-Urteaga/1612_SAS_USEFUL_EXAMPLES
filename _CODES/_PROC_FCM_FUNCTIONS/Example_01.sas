@@ -16,19 +16,20 @@ PROC FCMP OUTLIB = WORK.FUNCTIONS.DATES;
                                   FirstIntervalFinalDate,
                                   SecondIntervalInitialDate,
                                   SecondIntervalFinalDate);
+    * PUT statements degrades the performance of the function. ;
     SELECT;
       WHEN(MISSING(FirstIntervalInitialDate)  !
            MISSING(FirstIntervalFinalDate)    !
            MISSING(SecondIntervalInitialDate) !
            MISSING(SecondIntervalFinalDate))
         DO;
-          PUT "WARNING: Some parameters are missing.";
+          * PUT "WARNING: Some parameters are missing.";
           RETURN(.);
         END;
       WHEN(FirstIntervalInitialDate  > FirstIntervalFinalDate !
            SecondIntervalInitialDate > SecondIntervalFinalDate)
         DO;
-          PUT "ERROR: The input intervals are not well-defined (check them).";
+          * PUT "ERROR: The input intervals are not well-defined (check them).";
           RETURN(-1);
         END;
       WHEN(FirstIntervalInitialDate  <= SecondIntervalInitialDate <=
