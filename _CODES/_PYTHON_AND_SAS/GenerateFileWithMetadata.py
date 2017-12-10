@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # In order to make this file executable in a unix os, execute the following:
 # "chmod 755 GenerateFileWithMetadata.py"
+# I have tested this file in python 2.
 
 #-------------------------------------------------------------------------------
 # Author        : Cesar R. Urteaga-Reyesvera.
